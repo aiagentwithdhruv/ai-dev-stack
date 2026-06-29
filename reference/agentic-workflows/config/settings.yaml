@@ -1,0 +1,33 @@
+# Global settings for the agentic workflows engine.
+
+retry:
+  max_attempts: 3
+  backoff: exponential       # exponential | linear | fixed
+  base_delay_seconds: 2
+  max_delay_seconds: 30
+
+cost:
+  daily_limit_usd: 5.00       # blocking — check_budget() raises above this
+  per_run_limit_usd: 2.00     # max cost for a single run
+  confirm_above_usd: 0.50     # ask the user before spending more than this
+  warn_at_usd: 3.00
+  track_per_run: true
+
+logging:
+  level: INFO                 # DEBUG | INFO | WARNING | ERROR
+  format: json
+  output: runs/               # run logs go here
+  console: true
+
+execution:
+  timeout_seconds: 300        # per-tool timeout (5 min default)
+  parallel_tools: false       # run independent tools in parallel (future)
+  tmp_cleanup: false          # auto-delete .tmp/ after a workflow completes
+
+deliverables:
+  # Where final outputs go (a cloud destination the user can access is preferred).
+  default: .tmp/              # fallback if no destination specified
+  # Override per-workflow, e.g.:
+  # google_sheets: true
+  # gmail: true
+  # notion: true

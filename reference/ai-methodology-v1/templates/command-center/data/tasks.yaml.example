@@ -1,0 +1,67 @@
+meta:
+  product: "Your Product Name"      # shown in dashboard header
+  slug: "YOUR-PROJECT"              # used in output filename: ~/Downloads/YOUR-PROJECT-COMMAND-CENTER.html
+  repo_path: "/absolute/path/to/your/project/repo"   # where git commands run; falls back to CWD
+
+modules:
+  - id: auth
+    name: Authentication
+    status: shipped     # shipped | in_progress | planned
+    version: "v1.0"
+    description: "User login, JWT tokens, RBAC roles, multi-tenant isolation."
+    tasks:
+      - id: AUTH-1
+        title: "JWT middleware + RBAC decorator"
+        status: done
+        priority: p0    # p0 | p1 | p2
+        owner: specialist-a
+        notes: "Shipped in migration 003. Pattern: require_role('owner','admin') on every write endpoint."
+      - id: AUTH-2
+        title: "Password reset flow"
+        status: queued
+        priority: p1
+        owner: specialist-a
+        notes: "Blocked on email service setup. See INFRA-3."
+
+  - id: api
+    name: Core API
+    status: in_progress
+    version: "v0.4"
+    description: "REST endpoints for all primary entities. Schema-first, Pydantic-validated."
+    tasks:
+      - id: API-1
+        title: "Organizations CRUD (12 endpoints)"
+        status: done
+        priority: p0
+        owner: specialist-a
+        notes: "All endpoints tested. tenant_id enforced via RLS."
+      - id: API-2
+        title: "Reporting endpoints (4 aggregate views)"
+        status: in_progress
+        priority: p1
+        owner: specialist-a
+        notes: "Date-range CTE complete. Export to CSV pending."
+      - id: API-3
+        title: "Webhook delivery service"
+        status: queued
+        priority: p2
+        owner: specialist-a
+        notes: "Deferred — not in v1 scope."
+
+sessions:
+  - id: session-2024-01-22
+    date: "2024-01-22"
+    agent: specialist-a
+    commits: 4
+    tip_sha: "abc1234"
+    summary: "AUTH-1 complete. JWT middleware + 3 RBAC roles. 2 migration files. 18 new tests."
+  - id: session-2024-01-15
+    date: "2024-01-15"
+    agent: specialist-a
+    commits: 7
+    tip_sha: "def5678"
+    summary: "API-1 complete. Organizations CRUD + tenant isolation. Schema-first flow validated."
+
+archive_notes:
+  - "Jan 2024: discovered that Pydantic silently strips unknown fields — always check schema when fields go missing."
+  - "Feb 2024: migration 003 established the auth.current_tenant_id pattern — reference this, not earlier migrations."

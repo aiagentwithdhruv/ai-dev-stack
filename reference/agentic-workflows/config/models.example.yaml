@@ -1,0 +1,61 @@
+# LLM routing — which model for which task type.
+# Provider-agnostic: every provider below speaks the OpenAI-compatible API, so one SDK
+# serves them all (swap base_url + key). Model id strings are PLACEHOLDERS — replace with
+# your provider's current ids. Override per-workflow in the workflow's YAML frontmatter.
+
+default: gpt-4o-mini
+
+tasks:
+  # Deep reasoning, complex planning, multi-step analysis → top tier
+  research: gpt-4o
+  planning: gpt-4o
+  code_review: gpt-4o
+
+  # Balanced — generation, coding, summarization → mid tier
+  generation: gpt-4o-mini
+  code: gpt-4o-mini
+  summarization: gpt-4o-mini
+
+  # Fast + cheap — classification, extraction, formatting → small tier
+  classification: gpt-4o-mini
+  extraction: gpt-4o-mini
+  formatting: gpt-4o-mini
+  tagging: gpt-4o-mini
+
+  # Example of upgrading a specific task to a stronger model via an aggregator:
+  # research: openrouter/anthropic/claude-opus
+  # code: openrouter/anthropic/claude-sonnet
+
+# ============================================================
+# Provider endpoints — all OpenAI-compatible
+# ============================================================
+providers:
+  # An aggregator / gateway: one key, many providers' models.
+  aggregator:
+    base_url: https://openrouter.ai/api/v1
+    env_key: OPENROUTER_API_KEY
+    compatible_with: openai
+    setup: |
+      from openai import OpenAI
+      client = OpenAI(
+          base_url="https://openrouter.ai/api/v1",
+          api_key=os.getenv("OPENROUTER_API_KEY"),
+      )
+      resp = client.chat.completions.create(
+          model="anthropic/claude-sonnet",
+          messages=[{"role": "user", "content": "Hello"}],
+      )
+
+  # A self-hosted or third-party OpenAI-compatible gateway (fill in your base_url).
+  gateway:
+    base_url: <your-gateway-base-url>/v1
+    env_key: LLM_API_KEY
+    compatible_with: openai
+
+  # Direct providers (if you hold their keys).
+  openai:
+    base_url: https://api.openai.com/v1
+    env_key: OPENAI_API_KEY
+  anthropic:
+    base_url: https://api.anthropic.com
+    env_key: ANTHROPIC_API_KEY
