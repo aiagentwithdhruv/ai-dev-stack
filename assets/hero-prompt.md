@@ -1,21 +1,52 @@
-# Hero banner — image-generation prompt
+# Hero banner — HD image-generation prompts (ai-dev-stack)
 
-The current `assets/hero.png` still carries the old project name. Regenerate the banner
-with the prompt below (any text-to-image tool), export at 1280×320 (or wider), and replace
-`assets/hero.png`. No code change needed — `README.md` already references `assets/hero.png`.
+Generate at **1280×640 (2:1)** for the GitHub social-preview card, export PNG, replace `assets/hero.png`.
+The README already references `assets/hero.png`, so the swap is automatic.
 
-## Prompt
+Three directions below — generate each in Google Labs / Imagen, pick the best.
 
-> A clean, modern developer-tool hero banner, 1280×320, dark charcoal background with a
-> subtle blueprint/grid texture. Bold centered title **"ai-dev-stack"** in a crisp
-> geometric sans-serif, white. Beneath it, a smaller tagline: **"Foundations × Pillars ×
-> Domains — the reusable kit for building with AI."** To the sides, minimal line-art icons
-> representing the three build modes (a code bracket `</>`, a small agent/robot head, and a
-> looping automation arrow) plus six tiny domain dots. Accent color a single electric
-> teal-to-violet gradient on the title underline only. Flat, high-contrast, no photography,
-> no faces, no logos, generous negative space, premium open-source aesthetic.
+---
+
+## Prompt A — "Architectural blueprint" (recommended)
+
+> Ultra-clean futuristic developer-tool hero banner, 1280×640, cinematic wide composition.
+> Deep charcoal-to-near-black background (#0d1117) with a faint isometric blueprint grid and
+> subtle volumetric light. Centered title **"ai-dev-stack"** in a crisp geometric sans-serif,
+> pure white, with a single thin electric teal-to-violet gradient underline. Small tagline
+> beneath in soft gray: **"Foundations × Pillars × Domains — the reusable kit for building with AI."**
+> To the right, an elegant exploded-layer diagram floating in 3D: three translucent glass
+> panels stacked and slightly offset, glowing at the edges — labeled subtly as foundation,
+> pillar, domain — connected by thin luminous lines. Minimal line-art glyphs: a code bracket,
+> an agent node, a looping automation arrow. Premium open-source aesthetic, high detail, soft
+> bloom, no people, no faces, no logos, no stock-photo look, generous negative space, 8k, sharp.
+
+Negative: clutter, busy background, real photography, watermark, lens flare overload, gradients on text other than the underline.
+
+---
+
+## Prompt B — "Neural circuit" (techy, bolder)
+
+> Futuristic AI engineering banner, 1280×640. Dark indigo background with a glowing circuit-
+> board / neural-graph texture fading from dense (one side) to sparse negative space (other).
+> Big bold **"ai-dev-stack"** wordmark in white with a faint teal glow; one-line tagline below.
+> Nodes pulse along thin light-traces that resolve into three labeled clusters. Electric teal +
+> violet accents on a near-black field, high contrast, crisp typography, cinematic depth of
+> field, premium, minimal, no faces, no logos, 8k.
+
+Negative: messy, neon overload, unreadable text, photographic humans.
+
+---
+
+## Prompt C — "Light minimal" (alt for light-mode README)
+
+> Minimal premium banner, 1280×640, soft off-white background (#f6f8fa) with a faint dotted
+> grid. Bold near-black **"ai-dev-stack"** wordmark, a slim teal→violet underline, and a thin-
+> line isometric three-layer stack illustration on the right in graphite line-art. Lots of
+> whitespace, elegant, editorial, no photography, no logos, 8k, razor-sharp.
+
+---
 
 ## Notes
-- Keep it text-light and legible as a GitHub social-preview card (it gets cropped to ~2:1).
-- Optional variants: a light-mode version, and a square 640×640 for social posts.
-- Update `assets/hero.png` in place so the README banner swaps automatically.
+- Keep text large + legible (the card is cropped to ~2:1 in feeds/search).
+- Optional 640×640 square variant for social posts.
+- Keep the teal→violet accent consistent with the companion `ai-automation-kit` banner.
