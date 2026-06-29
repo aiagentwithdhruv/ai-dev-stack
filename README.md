@@ -1,12 +1,10 @@
-# ai-coding-rules
+# AI Dev Stack
 
 <p align="center">
-  <img src="assets/hero.png" alt="AI Coding Rules — 15 Rules + 9 Templates = Your AI Writes Like a Senior Engineer" width="100%">
+  <img src="assets/hero.png" alt="AI Dev Stack — rules, docs, and patterns that make your AI coding tools build like a senior engineer" width="100%">
 </p>
 
-Production-grade rules, docs, and patterns for AI-native full-stack development. Works with **Cursor** and **Claude Code**.
-
-15 engineering rules + 9 doc templates + skills guide + agent patterns + MCP setup. Drop into any project — your AI coding tool immediately thinks like a senior engineer.
+A production-grade kit of rules, docs, prompts, and patterns for AI-native development. It teaches your AI coding tools — **Cursor** and **Claude Code** — to think like a principal architect: pick the right layer, follow clean architecture, and ship deploy-ready code instead of demos. Drop it into any project and the assistant inherits a consistent operating model on the first prompt.
 
 ## Quick Start
 
@@ -26,149 +24,73 @@ curl -fsSL https://raw.githubusercontent.com/aiagentwithdhruv/ai-coding-rules/ma
 curl -fsSL https://raw.githubusercontent.com/aiagentwithdhruv/ai-coding-rules/main/claude/CLAUDE.md -o CLAUDE.md
 ```
 
-## What's inside
+## The mental model: substrate × two axes
+
+Everything in the kit sits on one **substrate** and is organized along **two axes** — *how* you build and *what* you build. Reserved space (`_frontier/`) holds patterns that aren't stable yet.
 
 ```
-ai-coding-rules/
-├── rules/                          # 15 Cursor rules (.mdc)
-├── claude/                         # Claude Code setup
-│   ├── CLAUDE.md                   # All 15 rules in one file
-│   ├── compose.sh                  # Build custom CLAUDE.md
-│   ├── rules/                      # 15 individual rule files
-│   └── .claude/settings.json       # Permission config template
-├── docs/                           # 9 project templates
-│   ├── PRD.md                      # Product requirements
-│   ├── ARCHITECTURE.md             # System architecture + data flow
-│   ├── API_SPEC.md                 # API endpoints + response format
-│   ├── DB_SCHEMA.md                # Tables, columns, indexes
-│   ├── DEPLOYMENT.md               # Local + AWS + Vercel + VPS + CI/CD
-│   ├── SKILLS.md                   # How to create and use skills
-│   ├── AGENTS.md                   # Subagent patterns and templates
-│   ├── LOADOUT.md                  # Project manifest template
-│   └── MCP.md                      # MCP server setup guide
-├── install.sh                      # One-liner installer
-└── LICENSE
+ai-dev-stack/
+├── foundations/      # SUBSTRATE — non-negotiables every build inherits
+│   ├── rules/                  # clean architecture, security, response style
+│   ├── docs/                   # PRD / ARCHITECTURE / API / SCHEMA / DEPLOY templates
+│   ├── evals/                  # measure before you trust — task + regression evals
+│   ├── observability/          # tracing, cost, latency, structured logs
+│   ├── guardrails/             # layered policy → input → output → monitor
+│   └── prompts/                # reusable system + task prompt patterns
+│
+├── pillars/          # AXIS 1 — HOW you build
+│   ├── software-development/   # backend, frontend, data, API contracts, DevOps
+│   ├── agents/                 # tools, schemas, orchestrator–worker, supervisor loops
+│   └── automation/             # event/scheduled pipelines  → companion repo below
+│
+├── domains/          # AXIS 2 — WHAT you build
+│   ├── rag-knowledge/          # ingestion, chunking, retrieval, grounded answers
+│   ├── data-analytics/         # NL-to-SQL, metrics, reporting, BI assistants
+│   ├── voice/                  # STT, TTS, real-time voice agents
+│   ├── vision-doc-ai/          # OCR, document extraction, multimodal pipelines
+│   ├── content-generation/     # long-form, structured, and media generation
+│   └── decisioning-forecasting/# scoring, ranking, prediction, recommendations
+│
+└── _frontier/        # RESERVED — emerging patterns, not yet production-stable
 ```
 
-## The 15 Rules
+**Read it as a grid.** Any project picks one or more **pillars** (the *how*) and one or more **domains** (the *what*), then stands the whole thing on **foundations**. A RAG support assistant is `pillars/agents` + `domains/rag-knowledge` on `foundations/{rules,evals,guardrails}`. A nightly report bot is `pillars/automation` + `domains/data-analytics`. The substrate never changes; the axes compose.
 
-| # | Rule | What it enforces |
-|---|------|-----------------|
-| 00 | **Global Architect** | Think architect-first. Clean architecture. Separation of concerns. |
-| 10 | **Backend FastAPI** | Thin routes. Services for logic. Repositories for DB. |
-| 20 | **Frontend Next.js** | TypeScript. Small components. Centralized API clients. |
-| 30 | **Database PostgreSQL** | Migrations. Indexes. Foreign keys. No raw SQL in routes. |
-| 35 | **API Contracts** | Version APIs. Typed schemas. Consistent error format. |
-| 40 | **Cache Redis** | Intentional TTLs. Stable keys. Wrapped access. |
-| 45 | **Environment Config** | Validate at startup. .env.example. Secret managers. |
-| 50 | **RAG System** | Separate ingestion from generation. Chunk metadata. |
-| 55 | **Data & Model Versioning** | Version datasets. Named checkpoints. Reproducibility. |
-| 60 | **Agents** | Tool schemas. Validated outputs. Supervisor patterns. |
-| 70 | **Security** | No hardcoded secrets. Prompt injection resistance. |
-| 80 | **Testing & Quality** | Tests for critical paths. Deterministic units. Linting. |
-| 85 | **Error & Observability** | Structured errors. Request tracing. Health checks. |
-| 90 | **DevOps & Deployment** | Docker. AWS. Vercel. VPS. CI/CD. |
-| 99 | **Response Style** | Minimal changes. Production code. No toy implementations. |
+## The substrate — [foundations/](foundations/)
 
-## The 9 Doc Templates
+The defaults every build inherits, regardless of pillar or domain. Rules and doc templates tell the AI *how* to write code and *what* you're building; evals, observability, and guardrails keep it honest in production. Start here — see [foundations/](foundations/).
 
-| Doc | What it defines | Why it matters |
-|-----|----------------|----------------|
-| **PRD.md** | Product requirements, users, milestones | AI knows **what** to build |
-| **ARCHITECTURE.md** | Layers, data flow, key decisions | AI knows **how** it's structured |
-| **API_SPEC.md** | Endpoints, response format, patterns | AI writes **consistent APIs** |
-| **DB_SCHEMA.md** | Tables, columns, types, indexes | AI writes **correct queries** |
-| **DEPLOYMENT.md** | Local + cloud + CI/CD setup | AI writes **deploy-ready code** |
-| **SKILLS.md** | Reusable automation capabilities | AI **reuses** before rebuilding |
-| **AGENTS.md** | Subagent patterns, templates | AI **delegates** complex tasks |
-| **LOADOUT.md** | Project manifest template | AI gets **instant context** |
-| **MCP.md** | External tool integrations | AI **connects** to services |
+## Axis 1 — pillars (HOW you build)
 
-## How It Works
+| Pillar | What it covers |
+|--------|----------------|
+| [software-development/](pillars/software-development/) | Thin routes, services, repositories, typed API contracts, caching, CI/CD. |
+| [agents/](pillars/agents/) | Tool schemas, validated outputs, orchestrator–worker and supervisor patterns. |
+| [automation/](pillars/automation/) | Event-driven and scheduled pipelines — see the companion repo below. |
 
-### Rules tell AI **how** to code
-```
-"Use clean architecture"
-"Never hardcode secrets"
-"Use Pydantic for validation"
-```
+## Axis 2 — domains (WHAT you build)
 
-### Docs tell AI **what** you're building
-```
-"We have 12 tables with multi-tenant isolation"
-"API uses /api/v1/ prefix with JWT auth"
-"Deploy to AWS ECS with GitHub Actions"
-```
+| Domain | What it covers |
+|--------|----------------|
+| [rag-knowledge/](domains/rag-knowledge/) | Separate ingestion from generation; chunk metadata; grounded, cited answers. |
+| [data-analytics/](domains/data-analytics/) | NL-to-SQL, read-only query agents, metrics, dashboards. |
+| [voice/](domains/voice/) | Speech-to-text, text-to-speech, low-latency voice agents. |
+| [vision-doc-ai/](domains/vision-doc-ai/) | OCR, document extraction, multimodal understanding. |
+| [content-generation/](domains/content-generation/) | Long-form, structured, and media content with quality gates. |
+| [decisioning-forecasting/](domains/decisioning-forecasting/) | Scoring, ranking, forecasting — classical models before LLMs for tabular data. |
 
-### Skills tell AI **what** to automate
-```
-"Use the deploy skill to push to production"
-"Use the scrape-leads skill for lead generation"
-```
+## Companion repo
 
-The `00-global-architect` rule auto-references your docs:
-```
-Before implementing, align with docs/PRD.md, docs/ARCHITECTURE.md,
-docs/API_SPEC.md, docs/DB_SCHEMA.md, and docs/DEPLOYMENT.md if present.
-```
+**[ai-automation-kit](https://github.com/aiagentwithdhruv/ai-automation-kit)** — n8n templates and workflow-automation patterns. The `automation` pillar links out to it so this repo stays focused on the build-time stack while workflow orchestration lives next door.
 
-## Cursor vs Claude Code
+## Suggested GitHub Topics
 
-| | Cursor | Claude Code |
-|---|---|---|
-| Format | `.mdc` with YAML frontmatter | `.md` plain markdown |
-| Location | `.cursor/rules/` | `CLAUDE.md` at project root |
-| Multiple files | 15 numbered files | 1 combined or subdirectory split |
-| Triggers | alwaysApply, globs, manual | Always loaded from current dir |
-| Install | `install.sh` | Single file copy |
+`ai-agents` · `rag` · `llm` · `prompt-engineering` · `automation` · `mcp` · `llmops` · `evals` · `claude-code` · `cursor` · `ai-development`
 
-Use both in the same project — zero conflict:
-```
-your-project/
-├── .cursor/rules/*.mdc     # Cursor reads these
-├── CLAUDE.md               # Claude Code reads this
-└── docs/                   # Both reference these
-```
+## Contributing & changelog
 
-## Customization
-
-### Swap frameworks
-
-Don't use Next.js? Replace `20-frontend-nextjs`:
-- React + Vite, SvelteKit, Nuxt, Angular
-
-Don't use FastAPI? Replace `10-backend-fastapi`:
-- Express, Django, Go, Rails
-
-### Add custom rules
-
-Cursor — create `05-my-rule.mdc` in `.cursor/rules/` (gap numbering, fits between 00 and 10).
-
-Claude Code — add a section to `CLAUDE.md`.
-
-### Compose Claude rules
-
-Pick only what you need:
-```bash
-cd ai-coding-rules/claude
-./compose.sh 00 10 30 70 80 99 > ~/project/CLAUDE.md    # Backend only
-./compose.sh 00 20 70 80 99 > ~/project/CLAUDE.md        # Frontend only
-./compose.sh 00 50 55 60 70 99 > ~/project/CLAUDE.md     # AI/ML only
-./compose.sh > ~/project/CLAUDE.md                         # Everything
-```
-
-## Related
-
-- **[skills](https://github.com/aiagentwithdhruv/skills)** — 38 reusable AI agent skills (lead gen, email, video, deployment). Install: `npx skills add aiagentwithdhruv/skills`
-
-`ai-coding-rules` = **how to set up your AI coding environment**
-`skills` = **what to automate with AI agents**
-
-## Credits
-
-Built by [@AiwithDhruv](https://github.com/aiagentwithdhruv) with Claude Code.
-
-Production-tested across 30+ projects — AI agents, RAG systems, SaaS products, and client work.
+- Adding a rule, prompt, or pattern? See [CONTRIBUTING.md](CONTRIBUTING.md) — including the generic, de-identified content rule.
+- Version history lives in [CHANGELOG.md](CHANGELOG.md).
 
 ## License
 
