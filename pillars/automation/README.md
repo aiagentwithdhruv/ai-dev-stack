@@ -30,4 +30,4 @@ Decide the mode here, then build it in `ai-automation-kit`. For the broader map 
 
 ---
 
-*Link: `ai-automation-kit` — companion repository (n8n-first + general workflow automation). [repo URL placeholder]*
+*Link: `ai-automation-kit` — companion repository (n8n-first + general workflow automation). https://github.com/aiagentwithdhruv/ai-automation-kit*
