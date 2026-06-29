@@ -79,9 +79,13 @@ The defaults every build inherits, regardless of pillar or domain. Rules and doc
 | [content-generation/](domains/content-generation/) | Long-form, structured, and media content with quality gates. |
 | [decisioning-forecasting/](domains/decisioning-forecasting/) | Scoring, ranking, forecasting — classical models before LLMs for tabular data. |
 
-## Companion repo
+## Companion repos
 
-**[ai-automation-kit](https://github.com/aiagentwithdhruv/ai-automation-kit)** — n8n templates and workflow-automation patterns. The `automation` pillar links out to it so this repo stays focused on the build-time stack while workflow orchestration lives next door.
+Focused repos that pair with this stack (kept separate so each stays searchable and reusable on its own):
+
+- **[ai-automation-kit](https://github.com/aiagentwithdhruv/ai-automation-kit)** — n8n-first + general workflow-automation patterns. The `automation` pillar links out to it.
+- **[skills](https://github.com/aiagentwithdhruv/skills)** — installable AI-agent skill packs (`npx skills add …`), cross-tool (Claude / Cursor / Copilot / Codex / Windsurf / Cline). The `foundations/` rules-and-skills layer links here.
+- **[ghost-browser](https://github.com/aiagentwithdhruv/ghost-browser)** — AI-powered browser automation (web scraping, auto-posting); a runnable example that pairs with the `automation` pillar.
 
 ## Suggested GitHub Topics
 
