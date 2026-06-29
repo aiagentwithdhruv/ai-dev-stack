@@ -1,15 +1,15 @@
 #!/bin/bash
-# Install ai-coding-rules into your project
-# Usage: curl -fsSL https://raw.githubusercontent.com/aiagentwithdhruv/ai-coding-rules/main/install.sh | bash
+# Install ai-dev-stack into your project
+# Usage: curl -fsSL https://raw.githubusercontent.com/aiagentwithdhruv/ai-dev-stack/main/install.sh | bash
 
 set -e
 
-REPO="https://github.com/aiagentwithdhruv/ai-coding-rules.git"
+REPO="https://github.com/aiagentwithdhruv/ai-dev-stack.git"
 RULES_DIR=".cursor/rules"
 DOCS_DIR="docs"
 TEMP_DIR=$(mktemp -d)
 
-echo "Installing ai-coding-rules..."
+echo "Installing ai-dev-stack..."
 echo ""
 
 # Clone repo

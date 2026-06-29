@@ -1,6 +1,6 @@
 # AI Coding Rules — Content Distribution Kit
 
-> One file. Everything you need to launch ai-coding-rules across all platforms.
+> One file. Everything you need to launch ai-dev-stack across all platforms.
 
 ---
 
@@ -201,9 +201,9 @@ Also included:
 This isn't theory. It's battle-tested across 30+ real projects.
 
 Install in 10 seconds:
-curl -fsSL https://raw.githubusercontent.com/aiagentwithdhruv/ai-coding-rules/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/aiagentwithdhruv/ai-dev-stack/main/install.sh | bash
 
-GitHub: github.com/aiagentwithdhruv/ai-coding-rules
+GitHub: github.com/aiagentwithdhruv/ai-dev-stack
 
 Your AI is only as good as the rules you give it.
 
@@ -249,7 +249,7 @@ Link in comments.
 **Comment to post immediately after:**
 ```
 Here's the repo (free, MIT license):
-github.com/aiagentwithdhruv/ai-coding-rules
+github.com/aiagentwithdhruv/ai-dev-stack
 
 15 rules + 9 doc templates.
 Works with Cursor (.mdc) and Claude Code (CLAUDE.md).
@@ -316,14 +316,14 @@ I built 15 rules across 30+ real projects (AI agents, RAG systems, SaaS, client 
 + 𝟵 𝗱𝗼𝗰 𝘁𝗲𝗺𝗽𝗹𝗮𝘁𝗲𝘀: PRD, Architecture, API Spec, DB Schema, Deployment, Skills, Agents, Loadout, MCP Server
 
 Install in 10 seconds:
-curl -fsSL https://raw.githubusercontent.com/aiagentwithdhruv/ai-coding-rules/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/aiagentwithdhruv/ai-dev-stack/main/install.sh | bash
 
 Or compose your own:
 ./compose.sh 00 10 30 70 80 99
 
 Free. MIT license. Star it if it saves you time.
 
-github.com/aiagentwithdhruv/ai-coding-rules
+github.com/aiagentwithdhruv/ai-dev-stack
 
 #CursorIDE #ClaudeCode #AIEngineering #OpenSource #CodingRules #DevTools #AI #SoftwareEngineering #WebDev #Programming
 ```
@@ -347,7 +347,7 @@ Now my AI never hardcodes secrets, always uses clean architecture, writes migrat
 
 The difference between "AI-assisted coding" and "AI-native engineering" is rules.
 
-github.com/aiagentwithdhruv/ai-coding-rules
+github.com/aiagentwithdhruv/ai-dev-stack
 
 #CursorIDE #ClaudeCode #AIcoding #DevTools #OpenSource #Programming #BuildInPublic
 ```
@@ -383,7 +383,7 @@ Most developers using Cursor or Claude Code don't realize:
 
 This took me 30+ projects to figure out. Took 10 seconds to install.
 
-github.com/aiagentwithdhruv/ai-coding-rules
+github.com/aiagentwithdhruv/ai-dev-stack
 
 Free. Open source. MIT license.
 
@@ -409,7 +409,7 @@ A thread 🧵
 ```
 𝗦𝘁𝗲𝗽 𝟭: Install the rules (10 seconds)
 
-curl -fsSL https://raw.githubusercontent.com/aiagentwithdhruv/ai-coding-rules/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/aiagentwithdhruv/ai-dev-stack/main/install.sh | bash
 
 This drops 15 engineering rules into your project as:
 • .cursor/rules/*.mdc (for Cursor)
@@ -460,7 +460,7 @@ No more:
 
 Tested across 30+ projects — AI agents, RAG systems, SaaS, client work.
 
-github.com/aiagentwithdhruv/ai-coding-rules
+github.com/aiagentwithdhruv/ai-dev-stack
 
 Free. MIT. Star it if it helps. ⭐
 
@@ -492,7 +492,7 @@ The AI is smart enough. The problem is we give it zero standards.
 
 One config file = your AI thinks like a senior engineer on every project.
 
-github.com/aiagentwithdhruv/ai-coding-rules
+github.com/aiagentwithdhruv/ai-dev-stack
 
 #CursorIDE #ClaudeCode #AIcoding #OpenSource #DevTools
 ```
@@ -536,7 +536,7 @@ github.com/aiagentwithdhruv/ai-coding-rules
 ## 5. Short Video #1 — "WHAT" (The Problem + Solution)
 
 ### Concept
-Screen recording: Open a fresh project, show AI writing bad code (secrets hardcoded, fat controllers, no tests). Then drop in ai-coding-rules, show the SAME prompt producing clean code. Before/after split.
+Screen recording: Open a fresh project, show AI writing bad code (secrets hardcoded, fat controllers, no tests). Then drop in ai-dev-stack, show the SAME prompt producing clean code. Before/after split.
 
 ### Title Options
 1. `I Made My AI Write Like a Senior Engineer (15 Rules)`
@@ -554,9 +554,9 @@ I open-sourced 15 production-grade rules + 9 doc templates that make your AI thi
 Works with Cursor (.mdc files) and Claude Code (CLAUDE.md).
 
 Install in 10 seconds:
-curl -fsSL https://raw.githubusercontent.com/aiagentwithdhruv/ai-coding-rules/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/aiagentwithdhruv/ai-dev-stack/main/install.sh | bash
 
-GitHub: https://github.com/aiagentwithdhruv/ai-coding-rules
+GitHub: https://github.com/aiagentwithdhruv/ai-dev-stack
 
 What's inside:
 - 15 engineering rules (architecture, backend, frontend, database, security, testing, DevOps)
@@ -588,7 +588,7 @@ Terminal recording: Run the install command, show files appearing. Open compose.
 
 ### Description
 ```
-How to set up ai-coding-rules in any project — takes 30 seconds.
+How to set up ai-dev-stack in any project — takes 30 seconds.
 
 Step 1: Run the install command
 Step 2: Customize with compose.sh (pick only rules you need)
@@ -597,14 +597,14 @@ Step 3: Your AI now follows production engineering standards
 Works with both Cursor and Claude Code. Zero conflict.
 
 Install:
-curl -fsSL https://raw.githubusercontent.com/aiagentwithdhruv/ai-coding-rules/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/aiagentwithdhruv/ai-dev-stack/main/install.sh | bash
 
 Compose examples:
 ./compose.sh 00 10 30 70 80 99    # Backend only
 ./compose.sh 00 20 70 80 99        # Frontend only
 ./compose.sh 00 50 55 60 70 99     # AI/ML only
 
-GitHub: https://github.com/aiagentwithdhruv/ai-coding-rules
+GitHub: https://github.com/aiagentwithdhruv/ai-dev-stack
 
 15 rules + 9 doc templates. Free. MIT license.
 
@@ -698,7 +698,7 @@ Cinematic movie still, dark moody workspace. Young Indian male developer with sh
 
 - [ ] Generate hand-drawn diagram in Gemini (16:9 + 4:5)
 - [ ] Generate cinematic thumbnails (A for YouTube, B for LinkedIn)
-- [ ] Update ai-coding-rules README with hand-drawn diagram as hero image
+- [ ] Update ai-dev-stack README with hand-drawn diagram as hero image
 - [ ] Post LinkedIn main post with Thumbnail B (command center)
 - [ ] Post LinkedIn comment post (next day or same day PM)
 - [ ] X Premium: Post Tweet 1 (Launch, long-form) — Monday

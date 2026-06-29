@@ -10,18 +10,18 @@ A production-grade kit of rules, docs, prompts, and patterns for AI-native devel
 
 ### Cursor
 ```bash
-curl -fsSL https://raw.githubusercontent.com/aiagentwithdhruv/ai-coding-rules/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/aiagentwithdhruv/ai-dev-stack/main/install.sh | bash
 ```
 
 ### Claude Code
 ```bash
-curl -fsSL https://raw.githubusercontent.com/aiagentwithdhruv/ai-coding-rules/main/claude/CLAUDE.md -o CLAUDE.md
+curl -fsSL https://raw.githubusercontent.com/aiagentwithdhruv/ai-dev-stack/main/claude/CLAUDE.md -o CLAUDE.md
 ```
 
 ### Both (recommended)
 ```bash
-curl -fsSL https://raw.githubusercontent.com/aiagentwithdhruv/ai-coding-rules/main/install.sh | bash
-curl -fsSL https://raw.githubusercontent.com/aiagentwithdhruv/ai-coding-rules/main/claude/CLAUDE.md -o CLAUDE.md
+curl -fsSL https://raw.githubusercontent.com/aiagentwithdhruv/ai-dev-stack/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/aiagentwithdhruv/ai-dev-stack/main/claude/CLAUDE.md -o CLAUDE.md
 ```
 
 ## The mental model: substrate × two axes
